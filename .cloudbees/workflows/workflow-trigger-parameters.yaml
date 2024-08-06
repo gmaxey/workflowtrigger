@@ -1,0 +1,28 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Workflow Trigger Parameters
+on:
+  workflow_dispatch:
+    inputs:
+      stringIn:
+        type: string
+        default: String input value
+        required: true
+        description: Input string
+      pickList:
+        type: choice
+        options:
+          - abc
+          - def
+          - ghi
+        default: abc
+        description: Pick list description
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "${{ inputs.stringIn }}"
+          echo "${{ inputs.pickList }}"
