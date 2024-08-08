@@ -19,7 +19,8 @@ on:
         description: Pick list description
       bool:
         type: boolean
-        required: true
+        default: true
+        description: A Boolean entry
 jobs:
   build:
     steps:
