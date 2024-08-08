@@ -19,6 +19,7 @@ on:
         description: Pick list description
       bool:
         type: boolean
+        requried: true
 jobs:
   build:
     steps:
