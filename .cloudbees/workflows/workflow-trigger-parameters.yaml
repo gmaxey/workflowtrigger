@@ -17,6 +17,8 @@ on:
           - ghi
         default: abc
         description: Pick list description
+      bool:
+        type: boolean
 jobs:
   build:
     steps:
